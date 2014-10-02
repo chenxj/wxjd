@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>购物</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+
+    *,html,body{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{background-color: #eff1f3;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 14px;
+		}
+		.task_head{
+			height: 80px;
+			line-height: 80px;
+			position: relative;
+			background-color: white;
+			border-bottom: 1px solid #dadee1;
+		}
+		.ic_fr{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/ic_buy_prod.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 20px;
+left: 100px;
+		}
+		.title{
+			height: 20px;
+margin-left: 120px;
+line-height: 20px;
+		}
+		._title_h1{
+			padding-top: 18px;
+			font-size: 18px;
+
+		}
+		._title_content{
+			margin-left: 40px;
+			font-size: 12px;
+			font-weight: lighter;
+			color: #7d8a9d;
+
+		}
+		.ic_login{
+			background-image: url(imgs/earn_login.png);
+		}
+		.ic_newer{
+			background-image: url(imgs/earn_newer.png);
+
+		}
+		.ic_fri{
+			background-image: url(imgs/earn_fri.png);
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 28px;
+right: 18px;
+-webkit-transform:rotate(270deg);
+		}
+		.ic_arrow_down{
+			-webkit-transform:none;
+		}
+		.ic_fetch{
+			top: 0px;
+			left: 0px;
+			background-image: url(imgs/task_done.png);
+			background-size: 64px;
+			height: 64px;
+			width: 64px;
+		}
+		.none{
+			display: none;
+		}
+		.wxheader{
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+			background-image: -webkit-linear-gradient(top,#1b1b1f,#333435);
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 12px;
+left: 6px;
+-webkit-transform: rotate(90deg);
+		}
+		.ic_menu{
+			background-image: url(imgs/wxmenu.png);
+			left: 285px;
+		}
+    </style>
+</head>
+<body>
+	<div class="wxheader">
+		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
+		<span style="color:white;position:absolute;left:40%">购物</span>
+		<i class="ic_arrow ic_menu"></i>
+ 
+	</div>
+	<div class="wrap_earn">
+		 
+		<div class="task_wrap">
+			<div class="task_item">
+				<div class="task_head" id="toggle_prod">
+					<i class="ic_prod ic_fr"></i>
+					<div class="title _title_h1">购买商品</div>
+					<div class="title _title_content">(每成功购买100元，可领取汪股10股)</div>
+					<a href="javascript:;"><i class="ic_arrow_down ic_arrow" id="ic_prod"></i></a>
+				</div>
+				<div class="task_detail" id="prod_detail">
+					<a href="intime_detail.html"><img src="imgs/earn_task_prod.png" style="width:320px; margin-left:-2px;" ></a>
+				</div>
+			</div>
+			<div class="task_item">
+				<div class="task_head">
+					<i class="ic_login ic_fr"></i>
+					<div class="title _title_h1">每日登陆</div>
+					<div class="title _title_content">(轻松几步，分分钟赚的盆满钵盈)</div>
+					<a href="javascript:;"><i class="ic_arrow"></i></a>
+				</div>
+				<div class="task_detail"></div>
+			</div>
+			<div class="task_item">
+				<div class="task_head">
+					<i class="ic_fri ic_fr"></i>
+					<div class="title _title_h1">抢好友红包</div>
+					<div class="title _title_content">(独乐乐不如众乐乐，喊小伙伴一起玩耍)</div>
+					<a href="javascript:;"><i class="ic_arrow"></i></a>
+				</div>
+				<div class="task_detail"></div>
+			</div>
+			<div class="task_item">
+				<div class="task_head" id="toggle_open"> 
+					<i class="ic_fr ic_fetch" id="ic_fetch"></i>
+					<i class="ic_newer ic_fr"></i>
+					<div class="title _title_h1">新手任务</div>
+					<div class="title _title_content">(独乐乐不如众乐乐，喊小伙伴一起玩耍)</div>
+					<a href="javascript:;"><i class="ic_arrow"></i></a>
+				</div>
+				<div class="task_detail none" id="open_detail">
+					<img src="imgs/earn_opendetail.png" style="width:320px;">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		(function(){
+			var task_dom = document.querySelectorAll('.task_head');
+			for(var i = 0,len = task_dom.length; i < len; i++){
+				task_dom[i].addEventListener('click',function(evt){
+					var t = evt.target;
+					while(!t.className || t.className != 'task_head') t =t.parentNode;
+					var dom = t.querySelector('.ic_arrow');
+					var cls = dom.className;
+					if(cls && cls.indexOf('ic_arrow_down') != -1){
+						dom.className = 'ic_arrow';
+					}else{
+						dom.className = 'ic_arrow ic_arrow_down';
+					}
+				});
+			}
+			document.getElementById('toggle_prod').addEventListener('click',function(){
+				var cls = document.getElementById('prod_detail').className;
+				if(cls && cls.indexOf('none') != -1){
+					cls = cls.replace(/none/,'');
+				}else{
+					cls += ' none';
+				}
+				document.getElementById('prod_detail').className = cls;
+
+			});
+
+			document.getElementById('toggle_open').addEventListener('click',function(){
+				var cls = document.getElementById('open_detail').className;
+				if(cls && cls.indexOf('none') != -1){
+					cls = cls.replace(/none/,'');
+					document.getElementById('ic_fetch').className = 'ic_fr ic_fetch none';
+				}else{
+					cls += ' none';
+					document.getElementById('ic_fetch').className = 'ic_fr ic_fetch ';
+
+				}
+				document.getElementById('open_detail').className = cls;
+
+			});
+		})();
+	</script>
+</body>
+</html>

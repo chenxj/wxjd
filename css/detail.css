@@ -1,0 +1,21 @@
+.stock_wrap{
+height: 28px;
+padding: 6px 0;
+}
+.time_txt{
+	padding: 4px 5px;
+background-color: #ed2b45;
+color: white;
+margin: 0 0 6px 8px;
+}
+.time_back{
+	color: #ed2b45;
+}
+.time_num{
+	color: #ed2b45;
+}
+.prod_txt{
+	margin-left: 20px;
+color: #b5b5b5;
+font-size: 11px;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>购物</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+		*,html,body{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{background-color: #eff1f3;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 14px;
+		}
+		.head_op{
+			background-color: white;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+
+		}
+		.head_op button{
+			width: 150px;
+			padding-top: 5px;
+padding-bottom: 5px;
+			background-color: white;
+			border: 1px solid black;
+			font-size: 12px;
+font-weight: lighter;
+		}
+		.head_op .btn_left{
+			border-radius: 4px 0 0 4px;
+			margin-right: 0;
+
+
+		}
+		.head_op .btn_right{
+			margin-left: 0;
+			border-radius: 0 4px 4px 0;
+		}
+		.coupbody{
+			text-align: center;
+			margin-top: 20px;
+		}
+		.head_op .ic_btn_tips{
+			border-radius: 50%;
+background-color: #ed2b45;
+height: 18px;
+position: absolute;
+width: 18px;
+color: white;
+font-size: 12px;
+font-style: normal;
+		}
+		.head_op .btn_touched{
+			background-color: #1f2c40;
+			color: white;
+		}
+		.head_op .btn_touched .ic_btn_tips{
+			background-color: white;
+			color: #ed2b45;
+		}
+		.wxheader{
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+			background-image: -webkit-linear-gradient(top,#1b1b1f,#333435);
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 12px;
+left: 6px;
+-webkit-transform: rotate(90deg);
+		}
+		.ic_menu{
+			background-image: url(imgs/wxmenu.png);
+			left: 285px;
+		}
+    </style>
+</head>
+<body>
+	<div class="wxheader">
+		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
+		<span style="color:white;position:absolute;left:40%">购物</span>
+		<i class="ic_arrow ic_menu"></i>
+ 
+	</div>
+	<div>
+		<div class="head_op">
+			<button class=" btn_left" id="btn_w">已使用&nbsp;<i class="ic_btn_tips">0</i></button><button class="btn_right btn_touched" id="btn_un">未使用&nbsp;<i class="ic_btn_tips">2</i></button>
+		</div>
+		<div class="coupbody" id="coupbody">
+			<img src="imgs/coup1.png" alt="" style="width:300px">
+			<img src="imgs/coup2.png" alt="" style="width:300px">
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('btn_w').addEventListener('click',function(){
+				document.getElementById('coupbody').style.display="none";
+				document.getElementById('btn_un').className="btn_right";
+				document.getElementById('btn_w').className="btn_left btn_touched";
+
+			});
+		document.getElementById('btn_un').addEventListener('click',function(){
+				document.getElementById('coupbody').style.display="";
+				document.getElementById('btn_w').className="btn_left";
+				document.getElementById('btn_un').className="btn_right btn_touched";
+
+			});
+	</script>
+</body>
+</html>

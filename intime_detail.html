@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>购物</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+    *,html,body{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{background-color: #f8f9fa;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			background-color: white;
+		}
+		.count_time{
+			height: 60px;
+			position: relative;
+			text-align: center;
+			border-top: 1px solid #dadee1;
+			padding-top: 16px;
+		}
+		._time{
+			font-size: 13px;
+			color: #a3abb8;
+
+		}
+		.current{
+			font-size: 18px;
+			font-weight: bold;
+			color: #1f2930;
+			margin: 0 50px;
+		}
+		.back{
+			color: #ababab;
+			height: 12px;
+			margin-top: 8px;
+font-size: 12px;
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 18px;
+right: 18px;
+		}
+		.wxheader{
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+			background-image: -webkit-linear-gradient(top,#1b1b1f,#333435);
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 12px;
+left: 6px;
+-webkit-transform: rotate(90deg);
+		}
+		.ic_menu{
+			background-image: url(imgs/wxmenu.png);
+			left: 285px;
+		}
+    </style>
+</head>
+<body>
+	<div class="wxheader">
+		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
+		<span style="color:white;position:absolute;left:40%">购物</span>
+		<i class="ic_arrow ic_menu"></i>
+ 
+	</div>
+	<img src="imgs/intime_banner.png" style="width:320px;">
+	<div class="count_time">
+		<span class="_time" id="t1">12:00</span>
+		<span class="_time current" id="t2">14:00</span>
+		<span class="_time" id="t3">16:00</span>
+		<div class="back">倒计时:<span id="c_time">12:23</span></div>
+		<i class="ic_arrow"></i>
+	</div>
+	<a href="prod_detail.html"><img src="imgs/intime_bottom.png" style="width:320px;"></a>
+
+	<script type="text/javascript">
+		(function(){
+			var _n = new Date();
+			var h = _n.getHours() + 1;
+			var m = _n.getMinutes();
+			var s = _n.getSeconds();
+			var pre_h = h -2;
+			var nex_h = h + 2;
+			if(pre_h < 0) pre_h += 24;
+			if(nex_h > 23)nex_h -= 24;
+
+			var fixh = function(num){
+				if(num == 24)return '00:00';
+				if(num < 10)return '0'+num + ':00';
+				return ''+num + ':00';
+			}
+			var last_m = 60 - m;
+			var last_s = 60 - s;
+
+			document.getElementById('t1').innerHTML = fixh(pre_h);
+			document.getElementById('t2').innerHTML = fixh(h);
+			document.getElementById('t3').innerHTML = fixh(nex_h);
+
+			var fixm = function(m,s){
+				if(m < 10)m = '0'+m;
+				if(s < 10)s = '0'+s;
+				return (m + ':' + s);
+			}
+			document.getElementById('c_time').innerHTML = fixm(last_m,last_s);
+
+
+			window.setInterval(function(){
+				var n = new Date();
+				var _m = 60 - n.getMinutes();
+				var _s = 60- n.getSeconds();
+
+				document.getElementById('c_time').innerHTML = fixm(_m,_s);
+			},1000);
+
+		})();
+	</script>
+</body>
+</html>

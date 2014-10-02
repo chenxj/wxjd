@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>购物</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+		*,html,body{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{background-color: #f8f9fa;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 14px;
+		}
+		.line_sell{
+			background-color: white;
+			border: 1px solid #e0e1e2;
+			border-left: 0;
+			border-right: 0;
+			height: 40px;
+			line-height: 40px;
+			padding-left: 15px;
+			margin: 10px 0 20px;
+			position: relative;
+		}
+		.c_txt{
+			color: #a3acb9;
+		}
+		.btn_wrap{
+text-align: center;
+padding: 0;
+margin: 0;
+background-color: #f8f9fa;
+border: 0;
+		}
+		.right_item{position: absolute;left: 250px;}
+		.right_item input{border: 0;width: 35px;}
+		.exchange_num{margin-bottom: 0;border-bottom: 0}
+		.all_num{margin-top: 0;}
+		.btn_sell{width: 250px;height: 35px;background-color: #dc2740;border: 0;color: white;}
+		.wxheader{
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+			background-image: -webkit-linear-gradient(top,#1b1b1f,#333435);
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 12px;
+left: 6px;
+-webkit-transform: rotate(90deg);
+		}
+		.ic_menu{
+			background-image: url(imgs/wxmenu.png);
+			left: 285px;
+		}
+    </style>
+</head>
+	
+<body>
+
+	<div class="wxheader">
+		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
+		<span style="color:white;position:absolute;left:40%">购物</span>
+		<i class="ic_arrow ic_menu"></i>
+ 
+	</div>
+	<div class="sellwrap">
+		<div class="line_sell able_share"><span class="left_item c_txt">可用余额(股东币)</span><span class="right_item">576.64</span></div>
+		<div class="line_sell sell_share"><span class="left_item">买入股数</span><span class="right_item"><input type="text" value="" placeholder="输入"></span></div>
+		<div class="line_sell exchange_num"><span class="left_item c_txt">交易金额</span><span class="right_item">267.5</span></div>
+		<div class="line_sell all_num"><span class="left_item c_txt">全仓最多可买入股数</span><span class="right_item">51</span></div>
+		<div class="line_sell btn_wrap"><button id="btn_" class="btn_sell" style="background-color:#4bd663">买入</button></div>
+	</div>
+
+	<script type="text/javascript">
+	document.getElementById('btn_').addEventListener('click',function(){
+				document.location.href="suc_exchage.html";
+			});
+	</script>
+</body>
+</html>

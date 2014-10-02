@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>购物</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>购物</title>
+	<style type="text/css">
+		*,html,body{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{background-color: #f8f9fa;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 14px;
+		}
+		.wrap{margin-top: 12px;border-top: 1px solid #dadee1;background-color: white;}
+		.cap{margin-left: 12px;height: 38px;
+line-height: 38px;}
+		.container{border-top: 1px solid #dadee1;}
+		.container table{
+			margin-left: 12px;
+		}
+		.container thead{
+			text-align: left;
+color: #a3acb9;
+font-size: 12px;
+		}
+		.loghead{
+			font-weight: lighter;
+		}
+		.container tbody tr td{border-top: 1px solid #dedfe0;height: 40px;}
+		.sell_dig{color: #ed2b45;}
+		.buy_dig{color: #01ba41;}
+		.wxheader{
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+			background-image: -webkit-linear-gradient(top,#1b1b1f,#333435);
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 12px;
+left: 6px;
+-webkit-transform: rotate(90deg);
+		}
+		.ic_menu{
+			background-image: url(imgs/wxmenu.png);
+			left: 285px;
+		}
+	</style>
+</head>
+<body><div class="wxheader">
+		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
+		<span style="color:white;position:absolute;left:40%">购物</span>
+		<i class="ic_arrow ic_menu"></i>
+ 
+	</div>
+	<div class="wrap">
+		<div class="cap">交易记录</div>
+		<div class="container">
+			<table cellspacing="0" cellspadding="0" style="width: 96%;">
+				<thead>
+					<th class="loghead" style="width:40%;height:28px">时间</th>
+					<th class="loghead" style="width:20%">交易类型</th>
+					<th class="loghead" style="width:16%">交易额</th>
+					<th class="loghead" style="width:10%">单价</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2014-09-11&nbsp;11:22</td>
+						<td class="sell_dig">卖出30股</td>
+						<td>-400</td>
+						<td>13.33</td>
+					</tr>
+					<tr>
+						<td>2014-09-11&nbsp;11:22</td>
+						<td class="buy_dig">买入30股</td>
+						<td>-400</td>
+						<td>13.33</td>
+					</tr>
+					<tr>
+						<td>2014-09-11&nbsp;11:22</td>
+						<td class="sell_dig">卖出30股</td>
+						<td>-400</td>
+						<td>13.33</td>
+					</tr>
+					<tr>
+						<td>2014-09-11&nbsp;11:22</td>
+						<td class="buy_dig">买入30股</td>
+						<td>-400</td>
+						<td>13.33</td>
+					</tr>
+					<tr>
+						<td>2014-09-11&nbsp;11:22</td>
+						<td class="sell_dig">卖出30股</td>
+						<td>-400</td>
+						<td>13.33</td>
+					</tr>
+					<tr>
+						<td>2014-09-11&nbsp;11:22</td>
+						<td class="buy_dig">买入30股</td>
+						<td>-400</td>
+						<td>13.33</td>
+					</tr>
+					<tr>
+						<td>2014-09-11&nbsp;11:22</td>
+						<td class="sell_dig">卖出30股</td>
+						<td>-400</td>
+						<td>13.33</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

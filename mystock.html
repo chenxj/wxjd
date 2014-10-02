@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>购物</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+    	*,html,body{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{background-color: #f8f9fa;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			background-color: gray;
+		}
+		.dashboard{
+			height: 100px;
+			background-image: -webkit-linear-gradient(45deg,#2b3e5d,#1d2a3e);
+		}
+		.dashboard .title{
+			color: white;
+			font-weight: lighter;
+			margin: 12px 0 2px 12px ;
+padding-top: 12px;
+		}
+		.dashboard .price{
+			color: #90ffbe;
+			font-size: 42px;
+			font-weight: lighter;
+			text-shadow:1px 1px 4px black;
+			margin-left: 12px;
+			float: left;
+		}
+		.dashboard .up_down{
+			position: absolute;
+bottom: 10px;
+left: 120px;
+		}
+		.txt_wrap{
+			text-align: bottom;
+			position: relative;
+			overflow: hidden;
+
+
+		}
+		.upd_txt{
+			margin-left: 18px;
+			color: green;
+		}
+		.digital{
+			height: 140px;
+			background-color: #eff1f3;
+		}
+		.earn{
+			float: left;
+width: 50%;
+margin-top: 25px;
+		}
+		._leaveleft{
+			margin-left: 24px;
+		}
+		.btn_stock{
+			background-color: white;
+color: #6aaefc;
+/*text-shadow: 1px 1px 4px #a8ceff;*/
+border: 1px solid #cacccd;
+border-radius: 4px;
+padding: 8px 12px;
+margin: 10px 16px;
+		}
+		.earn .txt{
+			color: #7d8a9d;
+		}
+		.earn .num{
+			margin-top: 4px;
+font-size: 17px;
+		}
+		.total{
+			height: 50px;
+			line-height: 50px;
+			background-color: white;
+		}
+		.total .txt_bottom{
+			font-size: 15px;
+			margin-left: 20px;
+		}
+		.total .num_bottom{
+			color: #ee4156;
+			font-size: 18px;
+		}
+		.op{
+			height: 40px;
+line-height: 40px;
+background-color: white;
+		}
+		.op button{
+			width: 50%;
+			border: none;
+			color: #1994ff;
+			background-color: white;
+			font-size: 14px;
+		}
+		.wxheader{
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+			background-image: -webkit-linear-gradient(top,#1b1b1f,#333435);
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 12px;
+left: 6px;
+-webkit-transform: rotate(90deg);
+		}
+		.ic_menu{
+			background-image: url(imgs/wxmenu.png);
+			left: 285px;
+		}
+		.menu a{
+			text-decoration: none;
+color: white;
+		}
+		.menu{
+			background-image: -webkit-linear-gradient(top,#333435,#1b1b1f);
+color: white;
+height: 60px;
+position: absolute;
+right: 4px;
+width: 100px;
+top: 35px;
+z-index: 9999
+		}
+    </style>
+</head>
+<body>
+	<div class="wxheader">
+		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
+		<span style="color:white;position:absolute;left:40%">我的资产</span>
+		<i class="ic_arrow ic_menu"></i>
+
+		<div class="menu">
+			<div style="height:24px;margin-left:12px;"><a href="exchange_log.html">我的交易记录</a></div>
+			<div style="height:20px;margin-left:12px;"><a href="coup.html">我的优惠券</a></div>
+		</div>
+	</div>
+	<div style="margin-top:-12px;">
+		<div class="dashboard">
+			<div class="title">
+				京东(JD)
+			</div>
+			<div class="txt_wrap">
+				<div class="price">
+					27.89
+				</div>
+				<div class="up_down">
+					<!--↑-->
+					<span class="upd_txt">↓&nbsp;0.29</span>
+					<span class="upd_txt">↓&nbsp;1.20%</span>
+				</div>
+
+			</div>
+			
+
+		</div>
+		<div class="digital">
+			<div class="earn">
+				<div class="txt _leaveleft">您的京东股数</div>
+				<div class="num _leaveleft">188</div>
+				<button class="btn_stock" id="btn_earn">赚取京东股</button>
+			</div>
+			<div class="earn">
+				<div class="txt _leaveleft">可用余额(京东股)</div>
+				<div class="num _leaveleft">676.89</div>
+				<button class="btn_stock" id="changecoup">兑换优惠券</button>
+			</div>
+		</div>
+		<div class="total"><span class="txt_bottom">您的京东资产(京东币)</span><span class="num_bottom txt_bottom">5,513.09</span></div>
+		<div class="bg_chart">
+			<img src="imgs/mystock_chart.png" style="width:320px">
+		</div>
+		<div class="op"><button id="btn_buy">买入</button><button id="btn_sell">卖出</button></div>
+	</div>
+
+	<script type="text/javascript">
+		(function(){
+			document.getElementById('btn_buy').addEventListener('click',function(){
+				document.location.href="buyin.html";
+			});
+			document.getElementById('btn_sell').addEventListener('click',function(){
+				document.location.href="sellout.html";
+			});
+			document.getElementById('btn_earn').addEventListener('click',function(){
+				document.location.href = "earnstock.html"
+
+			});
+			document.getElementById('changecoup').addEventListener('click',function(){
+				document.location.href = "exchange.html"
+			});
+		})();
+
+	</script>
+</body>
+</html>

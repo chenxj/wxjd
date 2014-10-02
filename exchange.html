@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>购物</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>购物</title>
+	<style type="text/css">
+		*,html,body{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{background-color: #f8f9fa;
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 14px;
+		}
+		.wrap{margin-top: 12px;border-top: 1px solid #dadee1;}
+		.cap{padding-left: 12px;height: 38px;background-color: white;
+line-height: 38px;}
+		.container{border-top: 1px solid #dadee1;background-color: white;}
+		.container table{
+			margin-left: 12px;
+		}
+		.right_item{position: absolute;left: 250px;}
+		.container thead{
+			text-align: left;
+color: #a3acb9;
+font-size: 12px;
+		}
+		.c_txt{color: #a3acb9}
+		.loghead{
+			font-weight: lighter;
+		}
+		.container tbody tr td{border-top: 1px solid #dedfe0;height: 40px;}
+		.sell_dig{color: #ed2b45;}
+		.buy_dig{color: #01ba41;}
+		.line_sell{
+			background-color: white;
+			border: 1px solid #e0e1e2;
+			border-left: 0;
+			border-right: 0;
+			height: 40px;
+			line-height: 40px;
+			padding-left: 15px;
+			margin: 10px 0 20px;
+			position: relative;
+		}
+		.btn_sell{width: 250px;height: 35px;background-color: #dc2740;border: 0;color: white;}
+		.btn_buy{border: none;
+margin: 0;
+text-align: center;
+padding: 0;}
+		._total{text-align: center;
+background-color: white;
+height: 40px;
+line-height: 40px;
+border-top: 1px solid #dedfe0;}
+.wxheader{
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+			background-image: -webkit-linear-gradient(top,#1b1b1f,#333435);
+		}
+		.ic_arrow{
+			position: absolute;
+width: 16px;
+background-image: url(imgs/down_arrow.png);
+background-repeat: no-repeat;
+height: 16px;
+background-size: 16px;
+top: 12px;
+left: 6px;
+-webkit-transform: rotate(90deg);
+		}
+		.ic_menu{
+			background-image: url(imgs/wxmenu.png);
+			left: 285px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wxheader">
+		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
+		<span style="color:white;position:absolute;left:40%">购物</span>
+		<i class="ic_arrow ic_menu"></i>
+ 
+	</div>
+	<div class="wrap">
+		<div class="line_sell "><span class="left_item c_txt">可用余额(股东币)</span><span class="right_item" style="color:red;">576.64</span></div>
+		<div class="cap">兑换优惠券</div>
+		<div class="container">
+			<table cellspacing="0" cellspadding="0" style="width: 96%;">
+				<thead>
+					<th class="loghead" style="height:28px">优惠券</th>
+					<th class="loghead"  >单价</th>
+					<th class="loghead" >购买数量</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="">满100减5元</td>
+						<td>40</td>
+						<td><input type="text" style="width:50px"></td>
+					</tr>
+					<tr>
+						<td class="">满500减30元</td>
+						<td>240</td>
+						<td><input type="text" style="width:50px"></td>
+					</tr>
+					<tr>
+						<td class="">满1000减65元</td>
+						<td>520</td>
+						<td><input type="text" style="width:50px"></td>
+					</tr>
+					<tr>
+						<td class="">满3000减200元</td>
+						<td>400</td>
+						<td><input type="text" style="width:50px"></td>
+					</tr>
+					<tr>
+						<td class="">满5000减400元</td>
+						<td>4000</td>
+						<td><input type="text" style="width:50px"></td>
+					</tr>
+					<tr>
+						<td class="">满10000减8000元</td>
+						<td>4000</td>
+						<td><input type="text" style="width:50px"></td>
+					</tr>
+					 
+				</tbody>
+			</table>
+		</div>
+
+
+		<div class="_total"><span style="font-size: 16px;">总计</span>&nbsp;<span style="color:red;">8080</span></div>
+		<div class="line_sell btn_wrap btn_buy"><button id="btn_ok" class="btn_sell " style="background-color:#4bd663">确认兑换</button></div>
+	</div>
+
+	<script type="text/javascript">
+		(function(){
+			document.getElementById('btn_ok').addEventListener('click',function(){
+				document.location.href = "suc_exchage.html"
+			});
+		})();
+	</script>
+</body>
+</html>
