@@ -61,7 +61,7 @@ left: 6px;
 		}
 		.ic_menu{
 			background-image: url(imgs/wxmenu.png);
-			left: 285px;
+			left: 90%;
 		}
     </style>
 </head>
@@ -78,7 +78,14 @@ left: 6px;
 		<div class="line_sell sell_share"><span class="left_item">卖出股数</span><span class="right_item"><input type="text" value="" placeholder="输入"></span></div>
 		<div class="line_sell exchange_num"><span class="left_item c_txt">交易金额</span><span class="right_item">267.5</span></div>
 		<div class="line_sell all_num"><span class="left_item c_txt">全仓最多可卖出股数</span><span class="right_item">51</span></div>
-		<div class="line_sell btn_wrap"><button class="btn_sell">卖出</button></div>
+		<div class="line_sell btn_wrap"><button class="btn_sell" id="btn_">卖出</button></div>
 	</div>
+	<script type="text/javascript">
+		(function(){
+			document.getElementById('btn_').addEventListener('click',function(){
+				document.location.href="suc_exchage.html";
+			});
+		})();
+	</script>
 </body>
 </html>
