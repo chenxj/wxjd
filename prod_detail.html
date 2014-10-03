@@ -47,7 +47,9 @@ left: 6px;
 <div class="wxheader">
         <a href="javascript:history.back();"><i class="ic_arrow"></i>
         <span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
-        <span style="color:white;position:absolute;left:40%">购物</span>
+        <div style="width:100%;position:absolute;text-align:center;top:0;">
+            <span style="color:white;">商品详情</span>
+        </div>
         <i class="ic_arrow ic_menu"></i>
  
     </div>
@@ -315,94 +317,6 @@ left: 6px;
 </div>
 </div>
 <!--part_tab end-->
-
-<div id="part_summary" style="display: none">
-<div class="wx_aside">
-    <a href="javascript:;" id="goTop" ptag="7001.1.2" class="goTopBtn btn_top btn_top_active" style="display: none;">返回顶部</a>
-</div>
-<div class="detail_row detail_cmt">
-    <div class="mod_fix_wrap"><div id="evalHead" class="mod_fix fixed"></div></div>
-    <div id="evalHead2"></div>
-    
-    <!-- cmt_view -->
-    <div class="cmt_tag" id="evalTag2"><span>屏幕大(179)</span><span>外观漂亮(133)</span><span>系统流畅(104)</span><span>性价比高(96)</span><span>照相不错(92)</span><span>通话质量好(71)</span><span>反应快(68)</span><span>电池耐用(64)</span><span>信号稳定(63)</span><span>功能齐全(59)</span></div>
-    <!-- cmt_tag -->
-    <div class="cmt_list_wrap">
-        <ul class="cmt_list" id="evalDet_summary"></ul>
-        <div class="cmt_list_loading">
-            <span class="tip" style="display: none;">加载更多</span>
-            <div class="wx_loading2" id="eveaLoading" style="display: none;"><i class="wx_loading_icon"></i></div>
-        </div>
-    </div>
-    <!-- list -->
-
-</div>
-</div>
-<!--part_summary end-->
-
-
-<!-- common part  -->
-<div class="mod_slider_mask" id="blackCover" style="display:none"></div>
-<div class="image_viewer" id="imageViewer" style="display: none">
-    <div class="inner"><img id="fullImg"></div>
-</div>
-<!-- common part  -->
-
-
-<script type="text/html" id="evalTpl">
-<li>
-    <div class="cmt_user">
-        <span class="user">{#name#}</span>
-        <span class="tip">{#levelName#}</span>
-        <span class="credit"><span style="width:{#score_code#}%"></span></span>
-        <span class="date">{#creationTime#}</span>
-    </div>
-    <div class="cmt_cnt">{#content#}</div>
-    <div class="cmt_att">{#shaidanImg#}</div>
-    <div class="cmt_sku">{#sku#}</div>
-</li>
-</script>
-<script type="text/html" id="evalHeadTpl">
-<div class="cmt_tab" id="evalTab">
-    <span class="cur" no="0" ptag="7001.1.30">全部<em>{#CommentCount#}</em></span>
-    <span no="3" ptag="7001.1.31">好评<em>{#GoodCount#}</em></span>
-    <span no="2" ptag="7001.1.32">中评<em>{#GeneralCount#}</em></span>
-    <span no="1" ptag="7001.1.33">差评<em>{#PoorCount#}</em></span>
-    <span no="4" ptag="7001.1.34">晒单<em>{#ShowCount#}</em></span>
-</div>
-</script>
-<script type="text/html" id="evalHeadTpl2">
-<div class="cmt_view">
-    <div class="per">
-        <em>{#GoodRateShow#}%</em>
-        <span>好评率</span>
-    </div>
-    <div class="tips">
-        <div class="line">
-            好评
-            <span class="box"><b style="width:{#GoodRateShow#}%"></b></span>
-            <span class="num">{#GoodRateShow#}%</span>
-        </div>
-        <div class="line">
-            中评
-            <span class="box"><b style="width:{#GeneralRateShow#}%"></b></span>
-            <span class="num">{#GeneralRateShow#}%</span>
-        </div>
-        <div class="line">
-            差评
-            <span class="box"><b style="width:{#PoorRateShow#}%"></b></span>
-            <span class="num">{#PoorRateShow#}%</span>
-        </div>
-    </div>
-</div>
-</script>
-<script type="text/html" id="serviceTpl">
-<li>
-    <i class="icon_service {#iconCode#}"></i>
-    <div class="service_txt">{#iconSrc#}</div>
-    <div class="service_desc">{#iconTip#}</div>
-</li>
-</script>
-
+ 
 </body>
 </html>

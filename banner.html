@@ -22,7 +22,7 @@
 			height: 40px;
 			line-height: 40px;
 			background-color: white;
-
+position: relative;
 		}
 		.mybiz a{
 			text-decoration: none;
@@ -30,6 +30,7 @@
 			height: 100%;
 			color: black;
 			margin-left: 20px;
+
 		}
 		.money{
 			margin-right: 20px;
@@ -57,19 +58,39 @@ left: 6px;
 			background-image: url(imgs/wxmenu.png);
 			left: 90%;
 		}
+		.biz_txt{
+			height: 21px;
+			line-height: 21px;
+
+		}
+		.biz_txt span{
+			margin-right: 50px;
+		}
+		.mybiz .ic_arrow{
+			-webkit-transform: rotate(270deg);
+			left: 92%;
+
+		}
     </style>
 </head>
 <body>
 	<div class="wxheader">
-		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<a href="javascript:history.back();" style="position:absolute;z-index:9999"><i class="ic_arrow"></i>
 		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
-		<span style="color:white;position:absolute;left:40%">购物</span>
+		<div style="width:100%;position:absolute;text-align:center;top:0;">
+			<span style="color:white;">京东股东计划</span>
+		</div>
 		<i class="ic_arrow ic_menu"></i>
  
 	</div>
 		<img src="imgs/banner_header.png" style="width:100%;">
 	<div class="mybiz">
-		<a href="mystock.html">您的资产(点击查看)<span class="money">5,554</span></a>
+		<a href="mystock.html" style="display:block;">
+			<div class="biz_txt"><span>京东(JD)</span><span style="margin-left:10px;">京东股</span><span>股东币</span></div>
+			<div class="biz_txt" style="color:#ed2b45;"><span>22.33&nbsp;↓&nbsp;1.32%</span><span style="margin-left:-15px;">122</span><span class="money">4,333</span></div>
+		</a>
+		<i class="ic_arrow"></i>
+		
 	</div>
 	<img src="imgs/banner_bottom.png" style="width:100%;">
 </body>

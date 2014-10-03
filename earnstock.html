@@ -112,9 +112,11 @@ left: 6px;
 </head>
 <body>
 	<div class="wxheader">
-		<a href="javascript:history.back();"><i class="ic_arrow2"></i>
+		<a href="javascript:history.back();" style="position:absolute;z-index:9999"><i class="ic_arrow2"></i>
 		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
-		<span style="color:white;position:absolute;left:43%">购物</span>
+		<div style="width:100%;position:absolute;text-align:center;top:0;">
+			<span style="color:white;">赚取京东股</span>
+		</div>
 		<i class="ic_arrow2 ic_menu"></i>
  
 	</div>
@@ -135,16 +137,16 @@ left: 6px;
 			<div class="task_item">
 				<div class="task_head">
 					<i class="ic_login ic_fr"></i>
-					<div class="title _title_h1">每日登陆</div>
+					<div class="title _title_h1">持续登陆</div>
 					<div class="title _title_content">(轻松几步，分分钟赚的盆满钵盈)</div>
 					<a href="javascript:;"><i class="ic_arrow"></i></a>
 				</div>
 				<div class="task_detail"></div>
 			</div>
 			<div class="task_item">
-				<div class="task_head">
+				<div class="task_head" id="invite_fri">
 					<i class="ic_fri ic_fr"></i>
-					<div class="title _title_h1">抢好友红包</div>
+					<div class="title _title_h1">邀请好友</div>
 					<div class="title _title_content">(独乐乐不如众乐乐，喊小伙伴一起玩耍)</div>
 					<a href="javascript:;"><i class="ic_arrow"></i></a>
 				</div>
@@ -203,6 +205,9 @@ left: 6px;
 				}
 				document.getElementById('open_detail').className = cls;
 
+			});
+			document.getElementById('invite_fri').addEventListener('click',function(){
+				document.location.href="share.html"
 			});
 		})();
 	</script>

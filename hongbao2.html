@@ -40,18 +40,82 @@ left: 6px;
 			background-image: url(imgs/wxmenu.png);
 			left: 90%;
 		}
+.win_wrap{
+			width: 100%;
+			height: 160px;
+			position: absolute;
+			top: 40%;
+		}
+		.swindow{
+			background: rgba(240,240,240,0.9);
+			margin: 0 auto;
+			width: 78%;
+			border-radius: 3px;
+		}
+		.swindow .title{
+			width: 65px;
+line-height: 40px;
+margin: 10px auto;
+padding: 0;
+font-weight: bold;
+font-size: 15px;
+		}
+		.swindow .txt{
+			margin: 0 20px;
+			font-weight: bold;
 
+		}
+		.swindow .button_s{
+			text-align: center;
+border-top: 1px solid #d8d8d8;
+margin-top: 12px;
+height: 40px;
+		}
+		.button_s a{
+			text-decoration: none;
+width: 47%;
+display: inline-block;
+color: #3a8ca6;
+height: 100%;
+line-height: 40px;
+		}
+		.op{
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+	}
+	.op a{
+		text-decoration: none;
+		color: #5dabff;
+		font-size: 15px;
+		font-weight: bold;
+	}
     </style>
 </head>
 <body><div class="wxheader">
-		<a href="javascript:history.back();"><i class="ic_arrow"></i>
+		<a href="javascript:history.back();" style="position:absolute;z-index:9999;"><i class="ic_arrow"></i>
 		<span style="color:white;margin-left:28px;display: inline-block;">返回</span></a>
-		<span style="color:white;position:absolute;left:40%">购物</span>
+		<div style="width:100%;position:absolute;text-align:center;top:0;">
+			<span style="color:white;">京东股票红利</span>
+		</div>
 		<i class="ic_arrow ic_menu"></i>
  
 	</div>
 	<a href="mystock.html">
-		<img src="imgs/hongbao2.png" style="width:100%;">
+		<img src="imgs/hongbao.png" style="width:100%;">
 	</a>
+	<div class="win_wrap">
+		<div class="swindow">
+			<div class="title">领取成功</div>
+			<div class="txt">恭喜您 ，您已成功领取10份京东股权，当前京东美股股价$33.12 ，可兑换股东币来换商城优惠哦！</div>
+			<div class="button_s">
+				<a href="banner.html" style="border-right:1px solid #d8d8d8">确认</a>
+				<a href="mystock.html">查看我的资产</a>
+			</div>
+		</div>
+	</div>
+	<div class="op">
+		<a href="exchange_log.html">我的股权交易记录</a>
+	</div>
 </body>
 </html>
